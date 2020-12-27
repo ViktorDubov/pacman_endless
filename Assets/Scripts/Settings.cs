@@ -49,13 +49,6 @@ public class Settings : MonoBehaviour
         }
         dropdown.ClearOptions();
         dropdown.AddOptions(resolutions);
-
-        //if (PlayerPrefs.HasKey("Prefs_masterVolume"))
-        //{
-        //    am.SetFloat("masterVolume", PlayerPrefs.GetFloat("Prefs_masterVolume"));
-        //    QualitySettings.SetQualityLevel(PlayerPrefs.GetInt("Prefs_q"));
-        //    Screen.SetResolution(rsl[PlayerPrefs.GetInt("Prefs_r")].width, rsl[PlayerPrefs.GetInt("Prefs_r")].height, isFullScreen);
-        //}
     }
 
     public void Resolution(int r)
@@ -76,18 +69,5 @@ public class Settings : MonoBehaviour
             Screen.SetResolution(rsl[PlayerPrefs.GetInt("Prefs_r")].width, rsl[PlayerPrefs.GetInt("Prefs_r")].height, isFullScreen);
             dropdownofresolution.SetValueWithoutNotify(PlayerPrefs.GetInt("Prefs_r"));
         }
-    }
-
-    //public void Update()
-    //{
-    //    if (PlayerPrefs.HasKey("Prefs_masterVolume"))
-    //    {
-    //        am.SetFloat("masterVolume", PlayerPrefs.GetFloat("Prefs_masterVolume"));
-    //        sliderofvolume.SetValueWithoutNotify(PlayerPrefs.GetFloat("Prefs_masterVolume"));
-    //        QualitySettings.SetQualityLevel(PlayerPrefs.GetInt("Prefs_q"));
-    //        dropdownofquality.SetValueWithoutNotify(PlayerPrefs.GetInt("Prefs_q"));
-    //        Screen.SetResolution(rsl[PlayerPrefs.GetInt("Prefs_r")].width, rsl[PlayerPrefs.GetInt("Prefs_r")].height, isFullScreen);
-    //        dropdownofresolution.SetValueWithoutNotify(PlayerPrefs.GetInt("Prefs_r"));
-    //    }
-    //}
+    }    
 }

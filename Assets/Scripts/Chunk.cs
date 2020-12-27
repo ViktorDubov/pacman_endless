@@ -8,15 +8,4 @@ public class Chunk : MonoBehaviour
     public Transform End;
     public Transform Startpoint;
     
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

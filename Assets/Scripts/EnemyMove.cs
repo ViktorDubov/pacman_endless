@@ -4,10 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class EnemyMove : MonoBehaviour
-{
-    //public float speed;
-    //public Transform startpoint;
-    //Transform firstpoint;
+{    
     Vector2 secondpoint;
     Vector2[] randomVector = { Vector2.up,Vector2.down,Vector2.right,Vector2.left};
     int[] randomstep = { 1, 2, 3, 4 };
@@ -16,11 +13,9 @@ public class EnemyMove : MonoBehaviour
     int randstep;
     float[] randomspeed = { 0.1f, 0.2f, 0.3f };
     float speed;
-
-    // Start is called before the first frame update
+        
     void Start()
-    {
-        //firstpoint = startpoint;
+    {        
         secondpoint = transform.position;
         randomdir = randomVector[Random.Range(0, randomVector.Length)];
         randstep = randomstep[Random.Range(0, randomstep.Length)];
@@ -32,8 +27,7 @@ public class EnemyMove : MonoBehaviour
         Vector2 p = Vector2.MoveTowards(transform.position, secondpoint, speed);
         GetComponent<Rigidbody2D>().MovePosition(p);
         if((Vector2)transform.position==secondpoint)
-        {
-            
+        {            
             if (valid(randomdir) && randstep>=0)
             {
                 secondpoint = (Vector2)transform.position + 2.0f * randomdir;
@@ -51,8 +45,7 @@ public class EnemyMove : MonoBehaviour
     }
 
     bool valid(Vector2 dir)
-    {
-        // Cast Line from 'next to Pac-Man' to 'Pac-Man'
+    {        
         Vector2 pos = transform.position;
         RaycastHit2D hit = Physics2D.Linecast(pos + 1.5f * dir, pos);//при 2 застревает почему-то...
         return (hit.collider == GetComponent<Collider2D>());
@@ -66,7 +59,6 @@ public class EnemyMove : MonoBehaviour
         {            
             Destroy(other.gameObject);
         }
-
         if (other.gameObject.tag == "Player")
         {            
             Time.timeScale = 0f;

@@ -12,8 +12,7 @@ public class PacmanMove : MonoBehaviour
     public int score;
     public GameObject ScoreObject;
     Text scoreText;
-
-    // Start is called before the first frame update
+        
     void Start()
     {
         dest = transform.position;
@@ -22,7 +21,6 @@ public class PacmanMove : MonoBehaviour
         scoreText.text = "Score: " + score.ToString();
     }
 
-    // Update is called once per frame
     void FixedUpdate()
     {        
         Vector2 p = Vector2.MoveTowards(transform.position, dest, speed);

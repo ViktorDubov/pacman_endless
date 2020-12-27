@@ -12,12 +12,9 @@ public class ChunksPlacer : MonoBehaviour
 
     public EnemyMove enemyPrefab;
     
-    public int numberoflevel;
+    public int numberoflevel;   
 
-    //public GameOver gameOver;
-
-    private List<Chunk> spawnedChunks = new List<Chunk>();
-    
+    private List<Chunk> spawnedChunks = new List<Chunk>();    
         
     void Start()
     {
@@ -31,8 +28,7 @@ public class ChunksPlacer : MonoBehaviour
         {
             SpawnChunk();
             numberoflevel = numberoflevel + 1;
-        }
-        
+        }        
     }
     
     private void SpawnChunk()
